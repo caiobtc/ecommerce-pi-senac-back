@@ -31,6 +31,10 @@ public class Usuario {
         return id;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -70,8 +74,6 @@ public class Usuario {
     public void setGrupo(Grupo grupo) {
         this.grupo = grupo;
     }
-
-
 
     public boolean isHabilitado() {
         return habilitado;

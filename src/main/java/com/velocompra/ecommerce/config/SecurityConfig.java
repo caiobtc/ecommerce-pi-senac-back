@@ -18,7 +18,9 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable()) // Desabilita CSRF para APIs RESTful
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/auth/login").permitAll() // Permite acesso ao endpoint de login
-                        .requestMatchers("/public/**").permitAll() // Permite acesso a endpoints públicos
+                        .requestMatchers("/public/**").permitAll()
+                        .requestMatchers("/api/produtos").permitAll()
+                        .requestMatchers("/api/usuarios").permitAll()// Permite acesso a endpoints públicos
                         .requestMatchers("/backoffice/**").hasAnyRole("ADMINISTRADOR", "ESTOQUISTA") // Exige autenticação para backoffice
                         .anyRequest().authenticated() // Exige autenticação para outros endpoints
                 )
